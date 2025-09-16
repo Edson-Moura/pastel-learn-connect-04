@@ -32,9 +32,6 @@ export const Header = () => {
           <Button variant="ghost" className="text-foreground hover:text-primary" asChild>
             <Link to="/ranking">Ranking</Link>
           </Button>
-          <Button variant="ghost" className="text-foreground hover:text-primary">
-            Comunidade
-          </Button>
         </nav>
 
         {/* Search */}
