@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { NavigationWrapper } from "@/components/NavigationWrapper";
 import Index from "./pages/Index";
 import Forum from "./pages/Forum";
 import StudyGroups from "./pages/StudyGroups";
@@ -17,14 +18,16 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/forum" element={<Forum />} />
-          <Route path="/study-groups" element={<StudyGroups />} />
-          <Route path="/ranking" element={<Ranking />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <NavigationWrapper>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/forum" element={<Forum />} />
+            <Route path="/study-groups" element={<StudyGroups />} />
+            <Route path="/ranking" element={<Ranking />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </NavigationWrapper>
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
