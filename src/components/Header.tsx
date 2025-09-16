@@ -5,17 +5,19 @@ import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
 import defaultAvatar from "@/assets/default-avatar.png";
+import logoEscola from "@/assets/logo-escola.png";
 
 export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center shadow-soft">
-            <span className="text-white font-bold text-sm">EN</span>
+        <div className="flex items-center space-x-3">
+          <img src={logoEscola} alt="Logo Comunidade EnglishOne" className="w-10 h-10" />
+          <div className="flex flex-col">
+            <span className="font-bold text-lg text-primary leading-tight">Comunidade</span>
+            <span className="font-bold text-lg text-primary leading-tight">EnglishOne</span>
           </div>
-          <span className="font-bold text-xl text-primary">English Hub</span>
         </div>
 
         {/* Navigation */}
