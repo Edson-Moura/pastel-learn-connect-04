@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
@@ -88,33 +88,80 @@ export const UserRankingList = () => {
         <div className="flex items-center justify-between">
           <CardTitle className="text-xl">Rankings e Classificações</CardTitle>
           <div className="flex gap-2">
-            <Button variant="outline" size="sm">Exportar</Button>
-            <Button variant="outline" size="sm">Atualizar</Button>
-            <Button variant="outline" size="sm">Seu Perfil</Button>
+            <TooltipButton 
+              variant="outline" 
+              size="sm"
+              action="exportar"
+              tooltipText="Exportar dados do ranking"
+            >
+              Exportar
+            </TooltipButton>
+            <TooltipButton 
+              variant="outline" 
+              size="sm"
+              action="atualizar"
+              tooltipText="Atualizar ranking atual"
+            >
+              Atualizar
+            </TooltipButton>
+            <TooltipButton 
+              variant="outline" 
+              size="sm"
+              action="ver"
+              tooltipText="Ver seu perfil no ranking"
+            >
+              Seu Perfil
+            </TooltipButton>
           </div>
         </div>
         
         <div className="flex gap-2 mt-4">
-          <Button variant="default" size="sm" className="bg-primary/10 text-primary hover:bg-primary/20">
+          <TooltipButton 
+            variant="default" 
+            size="sm" 
+            className="bg-primary/10 text-primary hover:bg-primary/20"
+            action="ver"
+            tooltipText="Ver top pontuações do ranking"
+          >
             <Trophy className="h-4 w-4 mr-2" />
             Top Pontuações
-          </Button>
-          <Button variant="ghost" size="sm">
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            size="sm"
+            action="ver"
+            tooltipText="Ver grupos mais ativos"
+          >
             <Users className="h-4 w-4 mr-2" />
             Grupos Ativos
-          </Button>
-          <Button variant="ghost" size="sm">
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            size="sm"
+            action="ver"
+            tooltipText="Ver conquistas disponíveis"
+          >
             <Target className="h-4 w-4 mr-2" />
             Conquistas
-          </Button>
-          <Button variant="ghost" size="sm">
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            size="sm"
+            action="ver"
+            tooltipText="Ver pontuações detalhadas"
+          >
             <BarChart3 className="h-4 w-4 mr-2" />
             Pontuações
-          </Button>
-          <Button variant="ghost" size="sm">
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            size="sm"
+            action="ver"
+            tooltipText="Ver progresso individual"
+          >
             <Activity className="h-4 w-4 mr-2" />
             Progresso
-          </Button>
+          </TooltipButton>
         </div>
       </CardHeader>
       
@@ -164,7 +211,13 @@ export const UserRankingList = () => {
         ))}
 
         <div className="flex justify-center mt-6">
-          <Button variant="outline">Ver Mais Rankings →</Button>
+          <TooltipButton 
+            variant="outline"
+            action="carregar"
+            tooltipText="Carregar mais usuários no ranking"
+          >
+            Ver Mais Rankings →
+          </TooltipButton>
         </div>
       </CardContent>
     </Card>

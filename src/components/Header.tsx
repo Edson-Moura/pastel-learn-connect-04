@@ -1,5 +1,5 @@
 import { Bell, MessageCircle, Search, User } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -25,18 +25,38 @@ export const Header = () => {
 
         {/* Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
-          <Button variant="ghost" className="text-foreground hover:text-primary" asChild>
+          <TooltipButton 
+            variant="ghost" 
+            className="text-foreground hover:text-primary" 
+            asChild
+            showTooltip={false}
+          >
             <Link to="/">Início</Link>
-          </Button>
-          <Button variant="ghost" className="text-foreground hover:text-primary" asChild>
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            className="text-foreground hover:text-primary" 
+            asChild
+            showTooltip={false}
+          >
             <Link to="/forum">Fóruns</Link>
-          </Button>
-          <Button variant="ghost" className="text-foreground hover:text-primary" asChild>
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            className="text-foreground hover:text-primary" 
+            asChild
+            showTooltip={false}
+          >
             <Link to="/study-groups">Grupos</Link>
-          </Button>
-          <Button variant="ghost" className="text-foreground hover:text-primary" asChild>
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            className="text-foreground hover:text-primary" 
+            asChild
+            showTooltip={false}
+          >
             <Link to="/ranking">Ranking</Link>
-          </Button>
+          </TooltipButton>
         </nav>
 
         {/* Search */}
@@ -52,35 +72,38 @@ export const Header = () => {
 
         {/* User Actions */}
         <div className="flex items-center space-x-3">
-          <Button 
+          <TooltipButton 
             variant="ghost" 
             size="icon" 
             className="relative"
             onClick={() => showFeatureToast('Notificações', 'enter')}
+            showTooltip={false}
           >
             <Bell className="h-5 w-5" />
             <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-destructive text-destructive-foreground text-xs">
               3
             </Badge>
-          </Button>
+          </TooltipButton>
           
-          <Button 
+          <TooltipButton 
             variant="ghost" 
             size="icon" 
             className="relative"
             onClick={() => showFeatureToast('Mensagens', 'enter')}
+            showTooltip={false}
           >
             <MessageCircle className="h-5 w-5" />
             <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-primary text-primary-foreground text-xs">
               2
             </Badge>
-          </Button>
+          </TooltipButton>
 
-          <Button
+          <TooltipButton
             variant="ghost"
             size="sm"
             className="p-0"
             onClick={() => showFeatureToast('Perfil do Usuário', 'enter')}
+            showTooltip={false}
           >
             <Avatar className="w-8 h-8">
               <AvatarImage src={defaultAvatar} />
@@ -88,7 +111,7 @@ export const Header = () => {
                 <User className="h-4 w-4" />
               </AvatarFallback>
             </Avatar>
-          </Button>
+          </TooltipButton>
         </div>
       </div>
     </header>

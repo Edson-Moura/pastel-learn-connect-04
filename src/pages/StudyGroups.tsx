@@ -4,7 +4,7 @@ import { StudyGroupCard } from "@/components/StudyGroupCard";
 import { GroupStats } from "@/components/GroupStats";
 import { PopularTags } from "@/components/PopularTags";
 import { UpcomingActivities } from "@/components/UpcomingActivities";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Plus } from "lucide-react";
 
 const StudyGroups = () => {
@@ -94,9 +94,30 @@ const StudyGroups = () => {
               <div>
                 <h1 className="text-2xl font-bold text-foreground mb-2">Grupos de Estudo</h1>
                 <div className="flex gap-2">
-                  <Button variant="secondary" size="sm">Gramática</Button>
-                  <Button variant="outline" size="sm">Conversação</Button>
-                  <Button variant="outline" size="sm">Exames</Button>
+                  <TooltipButton 
+                    variant="secondary" 
+                    size="sm"
+                    action="filtrar"
+                    tooltipText="Filtrar grupos de gramática"
+                  >
+                    Gramática
+                  </TooltipButton>
+                  <TooltipButton 
+                    variant="outline" 
+                    size="sm"
+                    action="filtrar"
+                    tooltipText="Filtrar grupos de conversação"
+                  >
+                    Conversação
+                  </TooltipButton>
+                  <TooltipButton 
+                    variant="outline" 
+                    size="sm"
+                    action="filtrar"
+                    tooltipText="Filtrar grupos de preparação para exames"
+                  >
+                    Exames
+                  </TooltipButton>
                 </div>
               </div>
             </div>
@@ -108,9 +129,13 @@ const StudyGroups = () => {
             </div>
 
             <div className="flex justify-center mt-8">
-              <Button variant="outline">
+              <TooltipButton 
+                variant="outline"
+                action="carregar"
+                tooltipText="Carregar mais grupos de estudo"
+              >
                 Carregar Mais Grupos +
-              </Button>
+              </TooltipButton>
             </div>
           </div>
 

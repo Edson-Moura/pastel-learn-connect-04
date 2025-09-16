@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Progress } from "@/components/ui/progress";
 import { TrendingUp, Award, Calendar, Target } from "lucide-react";
 
@@ -44,9 +44,14 @@ export const UserStats = () => {
             <Progress value={65} className="h-2 bg-white/20" />
           </div>
 
-          <Button variant="secondary" className="w-full mt-4 bg-white/20 hover:bg-white/30 border-0 text-white">
+          <TooltipButton 
+            variant="secondary" 
+            className="w-full mt-4 bg-white/20 hover:bg-white/30 border-0 text-white"
+            action="ver"
+            tooltipText="Abrir estatísticas detalhadas"
+          >
             Ver Estatísticas Completas
-          </Button>
+          </TooltipButton>
         </CardContent>
       </Card>
 

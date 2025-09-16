@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Badge } from "@/components/ui/badge";
 import { Users, Plus } from "lucide-react";
 
@@ -68,10 +68,15 @@ export const SuggestedGroups = () => {
               <Badge variant="secondary" className="text-xs">
                 {group.category}
               </Badge>
-              <Button size="sm" className="h-7 px-3 text-xs">
+              <TooltipButton 
+                size="sm" 
+                className="h-7 px-3 text-xs"
+                action="entrar"
+                tooltipText="Entrar neste grupo sugerido"
+              >
                 <Plus className="h-3 w-3 mr-1" />
                 Entrar
-              </Button>
+              </TooltipButton>
             </div>
           </div>
         ))}

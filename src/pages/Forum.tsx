@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
@@ -103,10 +103,14 @@ const Forum = () => {
           <div className="lg:col-span-1 space-y-6">
             <Card className="shadow-soft">
               <CardHeader>
-                <Button className="w-full bg-gradient-primary text-white hover:opacity-90">
+                <TooltipButton 
+                  className="w-full bg-gradient-primary text-white hover:opacity-90"
+                  action="criar"
+                  tooltipText="Criar uma nova discussão no fórum"
+                >
                   <Plus className="w-4 h-4 mr-2" />
                   Nova Discussão
-                </Button>
+                </TooltipButton>
               </CardHeader>
             </Card>
 
@@ -120,18 +124,42 @@ const Forum = () => {
                     <TabsTrigger value="all">Todos</TabsTrigger>
                   </TabsList>
                   <div className="mt-3 space-y-2">
-                    <Button variant="outline" size="sm" className="w-full justify-start">
+                    <TooltipButton 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full justify-start"
+                      action="filtrar"
+                      tooltipText="Ver discussões não respondidas"
+                    >
                       Não Respondidos
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full justify-start">
+                    </TooltipButton>
+                    <TooltipButton 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full justify-start"
+                      action="filtrar"
+                      tooltipText="Ver discussões mais populares"
+                    >
                       Mais Populares
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full justify-start">
+                    </TooltipButton>
+                    <TooltipButton 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full justify-start"
+                      action="filtrar"
+                      tooltipText="Ver discussões recentes"
+                    >
                       Recentes
-                    </Button>
-                    <Button variant="outline" size="sm" className="w-full justify-start">
+                    </TooltipButton>
+                    <TooltipButton 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full justify-start"
+                      action="filtrar"
+                      tooltipText="Ver discussões resolvidas"
+                    >
                       Resolvidos
-                    </Button>
+                    </TooltipButton>
                   </div>
                 </Tabs>
               </CardContent>
@@ -276,10 +304,14 @@ const Forum = () => {
                   </div>
                 ))}
                 <div className="text-center pt-4">
-                  <Button variant="outline">
+                  <TooltipButton 
+                    variant="outline"
+                    action="carregar"
+                    tooltipText="Carregar mais discussões do fórum"
+                  >
                     Carregar Mais Discussões
                     <Plus className="w-4 h-4 ml-2" />
-                  </Button>
+                  </TooltipButton>
                 </div>
               </CardContent>
             </Card>
@@ -316,7 +348,13 @@ const Forum = () => {
                     <SelectItem value="month">Este mês</SelectItem>
                   </SelectContent>
                 </Select>
-                <Button className="w-full">Buscar</Button>
+                <TooltipButton 
+                  className="w-full"
+                  action="buscar"
+                  tooltipText="Realizar busca avançada no fórum"
+                >
+                  Buscar
+                </TooltipButton>
               </CardContent>
             </Card>
 

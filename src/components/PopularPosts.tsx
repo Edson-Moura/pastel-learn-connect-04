@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Heart, MessageCircle, Share, TrendingUp } from "lucide-react";
@@ -59,9 +59,14 @@ export const PopularPosts = () => {
           <TrendingUp className="h-5 w-5 text-destructive" />
           Posts Mais Populares da Semana
         </CardTitle>
-        <Button variant="outline" size="sm">
+        <TooltipButton 
+          variant="outline" 
+          size="sm"
+          action="ver"
+          tooltipText="Ver todos os posts populares"
+        >
           Ver todos
-        </Button>
+        </TooltipButton>
       </CardHeader>
       <CardContent>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

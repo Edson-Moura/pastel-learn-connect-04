@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Trophy, Medal, Award, Users, BarChart3, Calendar } from "lucide-react";
 
@@ -65,8 +65,24 @@ export const RankingFilters = () => {
           <div>
             <label className="text-sm font-medium text-muted-foreground mb-2 block">Visualização</label>
             <div className="flex gap-2">
-              <Button variant="default" size="sm" className="flex-1">Básica</Button>
-              <Button variant="outline" size="sm" className="flex-1">Grade</Button>
+              <TooltipButton 
+                variant="default" 
+                size="sm" 
+                className="flex-1"
+                action="visualizar"
+                tooltipText="Mudar para visualização básica"
+              >
+                Básica
+              </TooltipButton>
+              <TooltipButton 
+                variant="outline" 
+                size="sm" 
+                className="flex-1"
+                action="visualizar"
+                tooltipText="Mudar para visualização em grade"
+              >
+                Grade
+              </TooltipButton>
             </div>
           </div>
         </CardContent>

@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Plus, Filter } from "lucide-react";
@@ -19,10 +19,14 @@ export const StudyGroupFilters = () => {
   return (
     <div className="space-y-6">
       {/* New Groups Button */}
-      <Button className="w-full bg-gradient-primary hover:opacity-90 text-white">
+      <TooltipButton 
+        className="w-full bg-gradient-primary hover:opacity-90 text-white"
+        action="criar"
+        tooltipText="Criar um novo grupo de estudo"
+      >
         <Plus className="w-4 h-4 mr-2" />
         Novos Grupos
-      </Button>
+      </TooltipButton>
 
       {/* Quick Filters */}
       <Card className="p-4">
@@ -31,15 +35,33 @@ export const StudyGroupFilters = () => {
           Filtros Rápidos
         </h3>
         <div className="space-y-2">
-          <Button variant="ghost" className="w-full justify-start text-sm" size="sm">
+          <TooltipButton 
+            variant="ghost" 
+            className="w-full justify-start text-sm" 
+            size="sm"
+            action="filtrar"
+            tooltipText="Ver meus grupos de estudo"
+          >
             Meus Grupos
-          </Button>
-          <Button variant="ghost" className="w-full justify-start text-sm" size="sm">
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            className="w-full justify-start text-sm" 
+            size="sm"
+            action="filtrar"
+            tooltipText="Ver grupos recomendados para você"
+          >
             Grupos Recomendados
-          </Button>
-          <Button variant="ghost" className="w-full justify-start text-sm" size="sm">
+          </TooltipButton>
+          <TooltipButton 
+            variant="ghost" 
+            className="w-full justify-start text-sm" 
+            size="sm"
+            action="filtrar"
+            tooltipText="Ver grupos mais populares"
+          >
             Grupos Populares
-          </Button>
+          </TooltipButton>
         </div>
       </Card>
 

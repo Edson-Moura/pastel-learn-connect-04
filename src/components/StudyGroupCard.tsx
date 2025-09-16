@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { TooltipButton } from "@/components/TooltipButton";
 import { Badge } from "@/components/ui/badge";
 import { Users, Star } from "lucide-react";
 
@@ -49,9 +49,13 @@ export const StudyGroupCard = ({ group }: StudyGroupCardProps) => {
                 </Badge>
               </div>
             </div>
-            <Button className="bg-gradient-primary hover:opacity-90 text-white">
+            <TooltipButton 
+              className="bg-gradient-primary hover:opacity-90 text-white"
+              action="participar"
+              tooltipText="Entrar neste grupo de estudo"
+            >
               Participar
-            </Button>
+            </TooltipButton>
           </div>
 
           <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
