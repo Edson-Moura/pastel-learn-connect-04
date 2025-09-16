@@ -4,14 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link } from "react-router-dom";
-import { TooltipButton } from "@/components/TooltipButton";
-import { useActivityToast } from "@/hooks/use-activity-toast";
 import defaultAvatar from "@/assets/default-avatar.png";
 import logoEscola from "@/assets/logo-escola.png";
 
 export const Header = () => {
-  const { showActivityToast } = useActivityToast();
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -53,45 +49,26 @@ export const Header = () => {
 
         {/* User Actions */}
         <div className="flex items-center space-x-3">
-          <TooltipButton 
-            variant="ghost" 
-            size="icon" 
-            className="relative"
-            activityName="Notificações"
-            onClick={() => showActivityToast("Notificações", true)}
-          >
+          <Button variant="ghost" size="icon" className="relative">
             <Bell className="h-5 w-5" />
             <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-destructive text-destructive-foreground text-xs">
               3
             </Badge>
-          </TooltipButton>
+          </Button>
           
-          <TooltipButton 
-            variant="ghost" 
-            size="icon" 
-            className="relative"
-            activityName="Mensagens"
-            onClick={() => showActivityToast("Mensagens", true)}
-          >
+          <Button variant="ghost" size="icon" className="relative">
             <MessageCircle className="h-5 w-5" />
             <Badge className="absolute -top-1 -right-1 h-5 w-5 rounded-full p-0 flex items-center justify-center bg-primary text-primary-foreground text-xs">
               2
             </Badge>
-          </TooltipButton>
+          </Button>
 
-          <TooltipButton 
-            variant="ghost" 
-            size="icon"
-            activityName="Perfil do Usuário"
-            onClick={() => showActivityToast("Perfil do Usuário", true)}
-          >
-            <Avatar className="w-8 h-8">
-              <AvatarImage src={defaultAvatar} />
-              <AvatarFallback className="bg-primary text-primary-foreground text-sm">
-                <User className="h-4 w-4" />
-              </AvatarFallback>
-            </Avatar>
-          </TooltipButton>
+          <Avatar className="w-8 h-8">
+            <AvatarImage src={defaultAvatar} />
+            <AvatarFallback className="bg-primary text-primary-foreground text-sm">
+              <User className="h-4 w-4" />
+            </AvatarFallback>
+          </Avatar>
         </div>
       </div>
     </header>
