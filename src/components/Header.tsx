@@ -102,15 +102,17 @@ export const Header = () => {
             variant="ghost"
             size="sm"
             className="p-0"
-            onClick={() => showFeatureToast('Perfil do Usuário', 'enter')}
+            asChild
             showTooltip={false}
           >
-            <Avatar className="w-8 h-8">
-              <AvatarImage src={defaultAvatar} />
-              <AvatarFallback className="bg-primary text-primary-foreground text-sm">
-                <User className="h-4 w-4" />
-              </AvatarFallback>
-            </Avatar>
+            <Link to="/profile">
+              <Avatar className="w-8 h-8">
+                <AvatarImage src={defaultAvatar} />
+                <AvatarFallback className="bg-primary text-primary-foreground text-sm">
+                  <User className="h-4 w-4" />
+                </AvatarFallback>
+              </Avatar>
+            </Link>
           </TooltipButton>
         </div>
       </div>
